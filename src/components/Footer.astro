@@ -1,0 +1,75 @@
+---
+import Icon from './Icons.astro';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">MedGuard Power</h3>
+        <p class="text-gray-400 mb-4">
+          South Florida's healthcare generator compliance experts
+        </p>
+        <p class="text-sm text-gray-500">
+          A division of Hackers and Painters, LLC
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="#compliance" class="hover:text-white transition-colors">Compliance</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+          <li><a href="/calculator" class="hover:text-white transition-colors">Pricing Calculator</a></li>
+        </ul>
+      </div>
+
+      <!-- Service Areas -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Service Areas</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li>Miami-Dade County</li>
+          <li>Broward County</li>
+          <li>Palm Beach County</li>
+          <li>Monroe County</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">24/7 Emergency</h4>
+        <div class="space-y-2 text-gray-400">
+          <p class="flex items-center gap-2">
+            <Icon name="phone" size={16} class="flex-shrink-0" />
+            (305) XXX-XXXX
+          </p>
+          <p class="flex items-center gap-2">
+            <Icon name="mail" size={16} class="flex-shrink-0" />
+            service@medguardpower.com
+          </p>
+          <p class="flex items-center gap-2">
+            <Icon name="alert" size={16} class="flex-shrink-0" />
+            emergency@medguardpower.com
+          </p>
+        </div>
+        <div class="mt-4">
+          <p class="text-sm text-gray-500">
+            Response Time: 4 hours guaranteed
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+      <p>&copy; {currentYear} MedGuard Power. All rights reserved.</p>
+      <p class="text-sm mt-2">
+        Certified • Licensed • Insured • AHCA Compliance Guaranteed
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,395 @@
+---
+import Icon from './Icons.astro';
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-text">MedGuard</span>
+          <Icon name="starburst" size={32} class="logo-icon" />
+        </div>
+        <p class="brand-tagline">
+          South Florida's healthcare generator<br/>compliance experts
+        </p>
+        <p class="brand-legal">
+          A division of Hackers and Painters, LLC
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Get Free Audit</a></li>
+        </ul>
+      </div>
+
+      <!-- Service Areas -->
+      <div class="footer-section">
+        <h4 class="footer-heading">Service Areas</h4>
+        <ul class="footer-locations">
+          <li>
+            <Icon name="location" size={16} />
+            Miami-Dade County
+          </li>
+          <li>
+            <Icon name="location" size={16} />
+            Broward County
+          </li>
+          <li>
+            <Icon name="location" size={16} />
+            Palm Beach County
+          </li>
+          <li>
+            <Icon name="location" size={16} />
+            Monroe County
+          </li>
+        </ul>
+      </div>
+
+      <!-- Emergency Contact -->
+      <div class="footer-section">
+        <h4 class="footer-heading emergency">24/7 Emergency</h4>
+        <div class="emergency-box">
+          <a href="tel:305-XXX-XXXX" class="emergency-phone">
+            <Icon name="phone" size={20} />
+            (305) XXX-XXXX
+          </a>
+          <p class="emergency-response">4-Hour Response SLA</p>
+        </div>
+        <div class="contact-info">
+          <a href="mailto:service@medguardpower.com" class="contact-link">
+            <Icon name="mail" size={16} />
+            service@medguardpower.com
+          </a>
+          <a href="mailto:emergency@medguardpower.com" class="contact-link urgent">
+            <Icon name="alert" size={16} />
+            emergency@medguardpower.com
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {currentYear} MedGuard Power. All rights reserved.
+      </p>
+      <div class="certifications">
+        <span class="cert-badge">Certified</span>
+        <span class="cert-divider">•</span>
+        <span class="cert-badge">Licensed</span>
+        <span class="cert-divider">•</span>
+        <span class="cert-badge">Insured</span>
+        <span class="cert-divider">•</span>
+        <span class="cert-badge highlight">AHCA Compliance Guaranteed</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(135deg, var(--clr-brand-teal) 0%, var(--clr-brand-teal-light) 100%);
+    color: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255, 255, 255, 0.02) 40px,
+        rgba(255, 255, 255, 0.02) 80px
+      );
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Brand Section */
+  .footer-brand {
+    padding-right: 2rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo-text {
+    font-family: var(--ff-display);
+    font-size: 2.5rem;
+    color: white;
+    line-height: 1;
+  }
+
+  .logo-icon {
+    color: var(--clr-safety-orange);
+  }
+
+  .brand-tagline {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .brand-legal {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+  }
+
+  /* Footer Sections */
+  .footer-heading {
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-safety-orange);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--clr-safety-orange);
+    border-radius: 999px;
+  }
+
+  .footer-heading.emergency {
+    color: var(--clr-warning);
+  }
+
+  .footer-heading.emergency::after {
+    background: var(--clr-warning);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 0;
+  }
+
+  .footer-links a:hover {
+    color: var(--clr-safety-orange);
+    padding-left: 0.5rem;
+  }
+
+  .footer-locations {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-locations li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+  }
+
+  .footer-locations svg {
+    color: var(--clr-safety-orange);
+    flex-shrink: 0;
+  }
+
+  /* Emergency Contact */
+  .emergency-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--clr-warning);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .emergency-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .emergency-phone:hover {
+    color: var(--clr-warning);
+    transform: scale(1.05);
+  }
+
+  .emergency-response {
+    font-size: 0.85rem;
+    color: var(--clr-warning);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .contact-link:hover {
+    color: var(--clr-safety-orange);
+  }
+
+  .contact-link.urgent {
+    color: var(--clr-warning);
+  }
+
+  .contact-link svg {
+    flex-shrink: 0;
+  }
+
+  /* Bottom Bar */
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  .certifications {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .cert-badge {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .cert-badge.highlight {
+    color: var(--clr-warning);
+    font-weight: 900;
+  }
+
+  .cert-divider {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-brand {
+      padding-right: 0;
+      text-align: center;
+    }
+
+    .footer-logo {
+      justify-content: center;
+    }
+
+    .footer-section {
+      text-align: center;
+    }
+
+    .footer-heading::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .footer-locations li {
+      justify-content: center;
+    }
+
+    .certifications {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cert-divider {
+      display: none;
+    }
+  }
+</style>

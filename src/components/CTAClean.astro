@@ -1,0 +1,387 @@
+---
+import Icon from './Icons.astro';
+---
+
+<section id="contact" class="cta section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <div class="cta-header">
+          <p class="cta-eyebrow fade-up">FREE COMPLIANCE AUDIT</p>
+          <h2 class="cta-title fade-up">
+            Get Your <span class="text-gradient">Free Compliance Audit</span>
+          </h2>
+          <p class="cta-subtitle fade-up">
+            Find out if your generators are truly AHCA-compliant. We'll review your current maintenance program and identify any gaps - absolutely free.
+          </p>
+        </div>
+
+        <form class="cta-form fade-up">
+          <div class="form-row">
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Facility Name"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                class="form-input"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <select class="form-select" required>
+              <option value="">Select Facility Type</option>
+              <option>Assisted Living Facility</option>
+              <option>Nursing Home</option>
+              <option>Hospital</option>
+              <option>Medical Center</option>
+              <option>Other Healthcare Facility</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <textarea
+              placeholder="Tell us about your current generator maintenance situation (optional)"
+              rows="3"
+              class="form-textarea"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="cta-button">
+            <Icon name="certificate" size={20} />
+            Get My Free Compliance Audit
+            <Icon name="arrow-right" size={20} />
+          </button>
+        </form>
+
+        <div class="cta-divider">
+          <span>OR</span>
+        </div>
+
+        <div class="cta-contact fade-up">
+          <p class="contact-label">Call us directly for immediate assistance:</p>
+          <a href="tel:305-XXX-XXXX" class="contact-phone">
+            <Icon name="phone" size={28} />
+            (305) XXX-XXXX
+          </a>
+          <p class="contact-availability">
+            <Icon name="clock" size={16} />
+            Available 24/7 for emergencies
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    background: linear-gradient(180deg, var(--clr-bg-white) 0%, var(--clr-bg-warm) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(242, 92, 42, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 70% 80%, rgba(13, 75, 75, 0.03) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .cta-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-3);
+    overflow: hidden;
+    border: 3px solid var(--clr-safety-orange);
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+  }
+
+  .cta-content {
+    padding: 4rem 3rem;
+  }
+
+  .cta-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .cta-eyebrow {
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-safety-orange);
+    margin-bottom: 1rem;
+  }
+
+  .cta-title {
+    font-family: var(--ff-sans);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--clr-brand-teal);
+    margin-bottom: 1.5rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-subtitle {
+    font-size: 1.15rem;
+    color: var(--clr-ink-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Form Styles */
+  .cta-form {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--clr-border);
+    border-radius: var(--radius);
+    background: var(--clr-bg-section);
+    font-family: var(--ff-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--clr-ink-primary);
+    transition: all 0.3s ease;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder {
+    color: var(--clr-ink-muted);
+    font-weight: 500;
+  }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--clr-safety-orange);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(242, 92, 42, 0.1);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .cta-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+    color: white;
+    border: none;
+    border-radius: var(--radius-full);
+    font-family: var(--ff-sans);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-3);
+  }
+
+  .cta-button:hover::before {
+    width: 300%;
+    height: 300%;
+  }
+
+  /* Divider */
+  .cta-divider {
+    text-align: center;
+    margin: 2.5rem 0;
+    position: relative;
+  }
+
+  .cta-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--clr-border);
+  }
+
+  .cta-divider span {
+    background: white;
+    padding: 0 1.5rem;
+    position: relative;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-ink-muted);
+  }
+
+  /* Contact Section */
+  .cta-contact {
+    text-align: center;
+  }
+
+  .contact-label {
+    font-size: 1.1rem;
+    color: var(--clr-ink-muted);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .contact-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--clr-brand-teal);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+  }
+
+  .contact-phone:hover {
+    color: var(--clr-safety-orange);
+    transform: scale(1.05);
+  }
+
+  .contact-availability {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--clr-success);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+  .fade-up:nth-child(4) { animation-delay: 0.3s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .cta-content {
+      padding: 3rem 1.5rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-phone {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,384 @@
+---
+import Icon from './Icons.astro';
+---
+
+<section class="why-choose-us section">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow fade-up">WHY MEDGUARD POWER</p>
+      <h2 class="section-title fade-up">
+        Healthcare Facilities Choose
+        <span class="text-gradient">MedGuard</span>
+      </h2>
+      <p class="section-subtitle fade-up">
+        We're not just another generator company. We're healthcare compliance experts.
+      </p>
+    </div>
+
+    <div class="features-grid fade-up">
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <Icon name="hospital" size={36} />
+        </div>
+        <h3 class="feature-card__title">100% Healthcare Focus</h3>
+        <p class="feature-card__text">
+          We only service medical facilities. We know AHCA, Joint Commission, and CMS requirements inside out.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <Icon name="smartphone" size={36} />
+        </div>
+        <h3 class="feature-card__title">Digital Compliance Portal</h3>
+        <p class="feature-card__text">
+          24/7 access to all maintenance records. Never scramble for paperwork during inspections again.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <Icon name="lightning" size={36} />
+        </div>
+        <h3 class="feature-card__title">4-Hour Emergency Response</h3>
+        <p class="feature-card__text">
+          When generators fail, lives are at risk. We guarantee rapid response when you need us most.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <Icon name="users" size={36} />
+        </div>
+        <h3 class="feature-card__title">Bilingual Service Teams</h3>
+        <p class="feature-card__text">
+          English and Spanish certified technicians ensure clear communication with your entire staff.
+        </p>
+      </div>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="comparison-section fade-up">
+      <h3 class="comparison-title">MedGuard vs. Other Generator Services</h3>
+      <div class="comparison-table">
+        <div class="comparison-header">
+          <div class="comparison-cell">Feature</div>
+          <div class="comparison-cell text-center">
+            <span class="badge badge--orange">MedGuard Power</span>
+          </div>
+          <div class="comparison-cell text-center">Generic Services</div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Healthcare Specialization</div>
+          <div class="comparison-cell text-center">
+            <Icon name="check" size={24} class="check-icon" />
+          </div>
+          <div class="comparison-cell text-center">
+            <span class="x-mark">✕</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">AHCA Compliance Expertise</div>
+          <div class="comparison-cell text-center">
+            <Icon name="check" size={24} class="check-icon" />
+          </div>
+          <div class="comparison-cell text-center">
+            <span class="x-mark">✕</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Digital Documentation Portal</div>
+          <div class="comparison-cell text-center">
+            <Icon name="check" size={24} class="check-icon" />
+          </div>
+          <div class="comparison-cell text-center">
+            <span class="x-mark">✕</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">4-Hour Emergency Response</div>
+          <div class="comparison-cell text-center">
+            <Icon name="check" size={24} class="check-icon" />
+          </div>
+          <div class="comparison-cell text-center">
+            <span class="x-mark">✕</span>
+          </div>
+        </div>
+
+        <div class="comparison-row">
+          <div class="comparison-cell">Bilingual Service Teams</div>
+          <div class="comparison-cell text-center">
+            <Icon name="check" size={24} class="check-icon" />
+          </div>
+          <div class="comparison-cell text-center">
+            <span class="x-mark">✕</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why-choose-us {
+    background: var(--clr-bg-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-choose-us::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, var(--clr-coral) 0%, transparent 70%);
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .eyebrow {
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-safety-orange);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--ff-sans);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--clr-brand-teal);
+    margin-bottom: 1.5rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--clr-ink-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .feature-card {
+    background: var(--clr-bg-cream);
+    border: 2px solid var(--clr-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+    border-color: var(--clr-safety-orange);
+  }
+
+  .feature-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .feature-card__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, rgba(242, 92, 42, 0.1) 0%, rgba(255, 122, 69, 0.1) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-safety-orange);
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover .feature-card__icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .feature-card__title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .feature-card__text {
+    color: var(--clr-ink-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Comparison Table */
+  .comparison-section {
+    background: var(--clr-bg-section);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    border: 1px solid var(--clr-border);
+  }
+
+  .comparison-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--clr-brand-teal);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .comparison-table {
+    overflow-x: auto;
+  }
+
+  .comparison-header,
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem 1rem;
+    align-items: center;
+  }
+
+  .comparison-header {
+    background: var(--clr-brand-teal);
+    color: white;
+    border-radius: var(--radius) var(--radius) 0 0;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+
+  .comparison-row {
+    background: white;
+    border-bottom: 1px solid var(--clr-border);
+  }
+
+  .comparison-row:last-child {
+    border-radius: 0 0 var(--radius) var(--radius);
+    border-bottom: none;
+  }
+
+  .comparison-cell {
+    font-weight: 600;
+    color: var(--clr-ink-primary);
+  }
+
+  .text-center {
+    text-align: center;
+    justify-self: center;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .badge--orange {
+    background: var(--clr-safety-orange);
+    color: white;
+  }
+
+  .check-icon {
+    color: var(--clr-success);
+  }
+
+  .x-mark {
+    color: var(--clr-danger);
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+  .fade-up:nth-child(4) { animation-delay: 0.3s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .comparison-section {
+      padding: 2rem 1rem;
+    }
+
+    .comparison-header,
+    .comparison-row {
+      font-size: 0.85rem;
+      padding: 1rem 0.5rem;
+    }
+
+    .comparison-table {
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.35rem 0.75rem;
+    }
+  }
+</style>

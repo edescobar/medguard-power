@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGuard Power - Healthcare Generator Compliance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #0077B6;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0077B6;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .hero-message {
+            background: linear-gradient(135deg, #0077B6 0%, #00A86B 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-message h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .hero-message p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .services {
+            margin-bottom: 40px;
+        }
+
+        .services h2 {
+            color: #0077B6;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .service-tier {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-tier:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,119,182,0.2);
+            border-color: #0077B6;
+        }
+
+        .service-tier.featured {
+            border-color: #00A86B;
+            background: linear-gradient(to bottom, #f0f9ff, #ffffff);
+        }
+
+        .tier-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0077B6;
+            margin-bottom: 10px;
+        }
+
+        .tier-target {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .tier-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00A86B;
+            margin-bottom: 15px;
+        }
+
+        .tier-features {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .tier-features li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .tier-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00A86B;
+            font-weight: bold;
+        }
+
+        .differentiators {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .differentiators h2 {
+            color: #0077B6;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .diff-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .diff-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .diff-text h3 {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+
+        .diff-text p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .compliance-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .compliance-box h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .compliance-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .compliance-box li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .compliance-box li:before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: #ffc107;
+        }
+
+        .contact {
+            background: #0077B6;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .emergency {
+            background: #FF6B35;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .service-grid, .diff-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            .container {
+                padding: 20px;
+            }
+            .hero-message {
+                background: #0077B6;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">MedGuard Power</div>
+            <div class="tagline">Healthcare Generator Compliance Experts</div>
+        </div>
+
+        <div class="hero-message">
+            <h1>Never Fail an AHCA Inspection Again</h1>
+            <p>100% Healthcare-Focused Generator Maintenance for South Florida</p>
+        </div>
+
+        <div class="services">
+            <h2>Service Plans Designed for Healthcare</h2>
+            <div class="service-grid">
+                <div class="service-tier">
+                    <div class="tier-name">Essential</div>
+                    <div class="tier-target">Small ALFs (30-60 beds)</div>
+                    <div class="tier-price">$250-$500/mo</div>
+                    <ul class="tier-features">
+                        <li>Quarterly inspections</li>
+                        <li>Annual load testing</li>
+                        <li>Basic compliance docs</li>
+                        <li>Business hours support</li>
+                    </ul>
+                </div>
+
+                <div class="service-tier featured">
+                    <div class="tier-name">Professional</div>
+                    <div class="tier-target">Nursing Homes (60-150 beds)</div>
+                    <div class="tier-price">$800-$1,600/mo</div>
+                    <ul class="tier-features">
+                        <li>Monthly maintenance</li>
+                        <li>Priority emergency response</li>
+                        <li>Digital compliance portal</li>
+                        <li>24/7 support hotline</li>
+                        <li>Fuel management</li>
+                    </ul>
+                </div>
+
+                <div class="service-tier">
+                    <div class="tier-name">Enterprise</div>
+                    <div class="tier-target">Hospitals & Multi-Site</div>
+                    <div class="tier-price">$2,500-$5,000/mo</div>
+                    <ul class="tier-features">
+                        <li>Weekly inspections</li>
+                        <li>Dedicated account manager</li>
+                        <li>4-hour emergency SLA</li>
+                        <li>Custom reporting</li>
+                        <li>Multi-site coordination</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="differentiators">
+            <h2>Why Healthcare Facilities Choose MedGuard</h2>
+            <div class="diff-grid">
+                <div class="diff-item">
+                    <div class="diff-icon">🏥</div>
+                    <div class="diff-text">
+                        <h3>100% Healthcare Focus</h3>
+                        <p>We only service medical facilities - we know AHCA, Joint Commission, and CMS requirements</p>
+                    </div>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-icon">📱</div>
+                    <div class="diff-text">
+                        <h3>Digital Compliance Portal</h3>
+                        <p>24/7 access to all maintenance records, ready for inspectors</p>
+                    </div>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-icon">⚡</div>
+                    <div class="diff-text">
+                        <h3>4-Hour Emergency Response</h3>
+                        <p>Guaranteed response time when you need us most</p>
+                    </div>
+                </div>
+                <div class="diff-item">
+                    <div class="diff-icon">🗣️</div>
+                    <div class="diff-text">
+                        <h3>Bilingual Service Teams</h3>
+                        <p>English/Spanish certified technicians for clear communication</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="compliance-box">
+            <h3>Florida Law Requirements We Handle:</h3>
+            <ul>
+                <li>72-hour backup power capability at safe temperatures</li>
+                <li>Quarterly maintenance documentation</li>
+                <li>Annual load bank testing & certification</li>
+                <li>Fuel rotation and quality testing</li>
+                <li>Transfer switch testing and maintenance</li>
+                <li>AHCA inspection-ready reporting</li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            <h2>Start Your Compliance Peace of Mind Today</h2>
+            <div class="contact-info">
+                📧 <a href="mailto:service@medguardpower.com">service@medguardpower.com</a>
+            </div>
+            <div class="contact-info">
+                📱 Call: (305) XXX-XXXX
+            </div>
+            <div class="contact-info">
+                🌐 <a href="https://medguardpower.com">medguardpower.com</a>
+            </div>
+            <div class="emergency">
+                🚨 24/7 Emergency: (305) XXX-XXXX
+            </div>
+        </div>
+    </div>
+</body>
+</html>

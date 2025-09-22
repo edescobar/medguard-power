@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGuard Power - Pricing Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .calculator-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #0077B6;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .calculator-body {
+            padding: 40px;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #0077B6;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .checkbox-item:hover {
+            background: #e9ecef;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .results-section {
+            background: linear-gradient(135deg, #00A86B 0%, #0077B6 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .results-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .price-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .price-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .price-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .price-value {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .breakdown {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .breakdown h3 {
+            margin-bottom: 15px;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .breakdown-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .savings-alert {
+            background: #FF6B35;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            background: #00A86B;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,168,107,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="header">
+            <h1>MedGuard Power Pricing Calculator</h1>
+            <p>Get instant pricing for your healthcare facility's generator maintenance needs</p>
+        </div>
+
+        <div class="calculator-body">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="facilityType">Facility Type</label>
+                    <select id="facilityType" onchange="calculatePrice()">
+                        <option value="">Select facility type...</option>
+                        <option value="alf-small">Assisted Living Facility (30-60 beds)</option>
+                        <option value="alf-medium">Assisted Living Facility (60-100 beds)</option>
+                        <option value="nursing-small">Nursing Home (50-100 beds)</option>
+                        <option value="nursing-medium">Nursing Home (100-150 beds)</option>
+                        <option value="nursing-large">Nursing Home (150+ beds)</option>
+                        <option value="hospital-small">Hospital/Medical Center (Under 100 beds)</option>
+                        <option value="hospital-large">Hospital/Medical Center (100+ beds)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="generators">Number of Generators</label>
+                    <input type="number" id="generators" min="1" max="10" value="1" onchange="calculatePrice()">
+                </div>
+
+                <div class="input-group">
+                    <label for="generatorSize">Average Generator Size (kW)</label>
+                    <select id="generatorSize" onchange="calculatePrice()">
+                        <option value="small">Under 150 kW</option>
+                        <option value="medium">150-500 kW</option>
+                        <option value="large">500-1000 kW</option>
+                        <option value="xlarge">Over 1000 kW</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Additional Services Needed</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emergency" onchange="calculatePrice()">
+                            <label for="emergency">24/7 Emergency Response</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="fuel" onchange="calculatePrice()">
+                            <label for="fuel">Fuel Management & Polishing</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="portal" checked onchange="calculatePrice()">
+                            <label for="portal">Digital Compliance Portal</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="hurricane" onchange="calculatePrice()">
+                            <label for="hurricane">Hurricane Readiness Package</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="priority" onchange="calculatePrice()">
+                            <label for="priority">Priority Service (4-hour SLA)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="contract">Contract Length</label>
+                    <select id="contract" onchange="calculatePrice()">
+                        <option value="monthly">Month-to-Month</option>
+                        <option value="annual">Annual (5% discount)</option>
+                        <option value="2year">2-Year (10% discount)</option>
+                        <option value="3year">3-Year (15% discount)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="results-section" id="results" style="display: none;">
+                <h2>Your Estimated Pricing</h2>
+
+                <div class="price-display">
+                    <div class="price-item">
+                        <div class="price-label">Monthly Cost</div>
+                        <div class="price-value" id="monthlyPrice">$0</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Annual Cost</div>
+                        <div class="price-value" id="annualPrice">$0</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Per Generator</div>
+                        <div class="price-value" id="perGenerator">$0</div>
+                    </div>
+                </div>
+
+                <div class="breakdown">
+                    <h3>Service Breakdown</h3>
+                    <div id="breakdownList"></div>
+                </div>
+
+                <div class="savings-alert" id="savings" style="display: none;">
+                    You're saving $<span id="savingsAmount">0</span> per year with this contract!
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <button class="cta-button" onclick="requestQuote()">Get Official Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            const facilityType = document.getElementById('facilityType').value;
+            const generators = parseInt(document.getElementById('generators').value) || 1;
+            const generatorSize = document.getElementById('generatorSize').value;
+            const contract = document.getElementById('contract').value;
+
+            if (!facilityType) {
+                document.getElementById('results').style.display = 'none';
+                return;
+            }
+
+            // Base pricing by facility type
+            const basePrices = {
+                'alf-small': 300,
+                'alf-medium': 500,
+                'nursing-small': 800,
+                'nursing-medium': 1250,
+                'nursing-large': 1800,
+                'hospital-small': 2500,
+                'hospital-large': 4000
+            };
+
+            // Generator size multipliers
+            const sizeMultipliers = {
+                'small': 1.0,
+                'medium': 1.3,
+                'large': 1.6,
+                'xlarge': 2.0
+            };
+
+            let basePrice = basePrices[facilityType];
+            let sizeMultiplier = sizeMultipliers[generatorSize];
+
+            // Calculate base monthly
+            let monthlyBase = basePrice * sizeMultiplier;
+
+            // Additional generators (80% of base price each)
+            let additionalGeneratorCost = (generators - 1) * (monthlyBase * 0.8);
+
+            // Add-on services
+            let addOns = 0;
+            let breakdownItems = [];
+
+            breakdownItems.push({
+                name: 'Base Service Plan',
+                cost: monthlyBase
+            });
+
+            if (generators > 1) {
+                breakdownItems.push({
+                    name: `Additional Generators (${generators - 1})`,
+                    cost: additionalGeneratorCost
+                });
+            }
+
+            if (document.getElementById('emergency').checked) {
+                const emergencyCost = monthlyBase * 0.25;
+                addOns += emergencyCost;
+                breakdownItems.push({
+                    name: '24/7 Emergency Response',
+                    cost: emergencyCost
+                });
+            }
+
+            if (document.getElementById('fuel').checked) {
+                const fuelCost = 200 * generators;
+                addOns += fuelCost;
+                breakdownItems.push({
+                    name: 'Fuel Management',
+                    cost: fuelCost
+                });
+            }
+
+            if (document.getElementById('portal').checked) {
+                const portalCost = 50;
+                addOns += portalCost;
+                breakdownItems.push({
+                    name: 'Digital Compliance Portal',
+                    cost: portalCost
+                });
+            }
+
+            if (document.getElementById('hurricane').checked) {
+                const hurricaneCost = 150;
+                addOns += hurricaneCost;
+                breakdownItems.push({
+                    name: 'Hurricane Readiness',
+                    cost: hurricaneCost
+                });
+            }
+
+            if (document.getElementById('priority').checked) {
+                const priorityCost = monthlyBase * 0.35;
+                addOns += priorityCost;
+                breakdownItems.push({
+                    name: 'Priority Service (4hr SLA)',
+                    cost: priorityCost
+                });
+            }
+
+            // Calculate total monthly
+            let totalMonthly = monthlyBase + additionalGeneratorCost + addOns;
+
+            // Apply contract discounts
+            const discounts = {
+                'monthly': 0,
+                'annual': 0.05,
+                '2year': 0.10,
+                '3year': 0.15
+            };
+
+            let discount = discounts[contract];
+            let discountedMonthly = totalMonthly * (1 - discount);
+            let annualCost = discountedMonthly * 12;
+            let perGeneratorCost = discountedMonthly / generators;
+
+            // Update display
+            document.getElementById('monthlyPrice').textContent = `$${discountedMonthly.toFixed(0)}`;
+            document.getElementById('annualPrice').textContent = `$${annualCost.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+            document.getElementById('perGenerator').textContent = `$${perGeneratorCost.toFixed(0)}/mo`;
+
+            // Update breakdown
+            let breakdownHTML = '';
+            breakdownItems.forEach(item => {
+                breakdownHTML += `
+                    <div class="breakdown-item">
+                        <span>${item.name}</span>
+                        <span>$${item.cost.toFixed(0)}</span>
+                    </div>
+                `;
+            });
+
+            if (discount > 0) {
+                let savingsAmount = totalMonthly * discount * 12;
+                breakdownHTML += `
+                    <div class="breakdown-item">
+                        <span>Contract Discount (${discount * 100}%)</span>
+                        <span>-$${(totalMonthly * discount).toFixed(0)}/mo</span>
+                    </div>
+                `;
+                document.getElementById('savings').style.display = 'block';
+                document.getElementById('savingsAmount').textContent = savingsAmount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            } else {
+                document.getElementById('savings').style.display = 'none';
+            }
+
+            breakdownHTML += `
+                <div class="breakdown-item">
+                    <span>Total Monthly</span>
+                    <span>$${discountedMonthly.toFixed(0)}</span>
+                </div>
+            `;
+
+            document.getElementById('breakdownList').innerHTML = breakdownHTML;
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function requestQuote() {
+            const facilityType = document.getElementById('facilityType').value;
+            if (!facilityType) {
+                alert('Please complete the calculator form first');
+                return;
+            }
+
+            // Gather all form data
+            const formData = {
+                facility: facilityType,
+                generators: document.getElementById('generators').value,
+                size: document.getElementById('generatorSize').value,
+                contract: document.getElementById('contract').value,
+                emergency: document.getElementById('emergency').checked,
+                fuel: document.getElementById('fuel').checked,
+                portal: document.getElementById('portal').checked,
+                hurricane: document.getElementById('hurricane').checked,
+                priority: document.getElementById('priority').checked
+            };
+
+            // Create email body
+            const emailBody = `I'd like an official quote for generator maintenance services.
+
+Calculator Results:
+- Facility Type: ${facilityType}
+- Number of Generators: ${formData.generators}
+- Generator Size: ${formData.size}
+- Contract Length: ${formData.contract}
+- Additional Services: ${Object.keys(formData).filter(k => formData[k] === true).join(', ')}
+
+Estimated Monthly: ${document.getElementById('monthlyPrice').textContent}
+
+Please contact me with an official quote.`;
+
+            // Open email client
+            window.location.href = `mailto:service@medguardpower.com?subject=Generator Maintenance Quote Request&body=${encodeURIComponent(emailBody)}`;
+        }
+
+        // Initialize
+        calculatePrice();
+    </script>
+</body>
+</html>

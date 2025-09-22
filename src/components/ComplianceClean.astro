@@ -1,0 +1,478 @@
+---
+import Icon from './Icons.astro';
+---
+
+<section class="compliance section">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow fade-up">FLORIDA COMPLIANCE</p>
+      <h2 class="section-title fade-up">
+        Stay <span class="text-gradient">100% Compliant</span><br/>
+        With Florida Law
+      </h2>
+      <p class="section-subtitle fade-up">
+        We handle all state and federal regulations. You're always inspection-ready.
+      </p>
+    </div>
+
+    <div class="compliance-card fade-up">
+      <div class="compliance-header">
+        <Icon name="alert" size={32} class="alert-icon" />
+        <h3>Florida Emergency Power Requirements</h3>
+        <span class="badge badge--warning">Post-Hurricane Irma Law</span>
+      </div>
+
+      <div class="compliance-content">
+        <div class="requirements-grid">
+          <div class="requirements-column">
+            <h4 class="column-title">
+              <Icon name="shield" size={20} />
+              What the Law Requires
+            </h4>
+            <ul class="requirements-list">
+              <li>
+                <Icon name="arrow-right" size={16} class="list-icon" />
+                <span>72 hours of backup power at safe temperatures</span>
+              </li>
+              <li>
+                <Icon name="arrow-right" size={16} class="list-icon" />
+                <span>Quarterly maintenance documentation</span>
+              </li>
+              <li>
+                <Icon name="arrow-right" size={16} class="list-icon" />
+                <span>Annual load bank testing & certification</span>
+              </li>
+              <li>
+                <Icon name="arrow-right" size={16} class="list-icon" />
+                <span>Fuel rotation and quality testing</span>
+              </li>
+              <li>
+                <Icon name="arrow-right" size={16} class="list-icon" />
+                <span>Transfer switch testing and maintenance</span>
+              </li>
+              <li>
+                <Icon name="arrow-right" size={16} class="list-icon" />
+                <span>AHCA inspection-ready reporting</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="requirements-column">
+            <h4 class="column-title success">
+              <Icon name="check" size={20} />
+              How MedGuard Ensures Compliance
+            </h4>
+            <ul class="requirements-list">
+              <li>
+                <Icon name="check" size={16} class="check-icon" />
+                <span>Automated compliance tracking system</span>
+              </li>
+              <li>
+                <Icon name="check" size={16} class="check-icon" />
+                <span>Pre-inspection audits and preparation</span>
+              </li>
+              <li>
+                <Icon name="check" size={16} class="check-icon" />
+                <span>Digital records formatted for inspectors</span>
+              </li>
+              <li>
+                <Icon name="check" size={16} class="check-icon" />
+                <span>Proactive maintenance scheduling</span>
+              </li>
+              <li>
+                <Icon name="check" size={16} class="check-icon" />
+                <span>24/7 compliance portal access</span>
+              </li>
+              <li>
+                <Icon name="check" size={16} class="check-icon" />
+                <span>Immediate violation remediation</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="penalties-warning">
+          <div class="penalties-header">
+            <Icon name="alert" size={24} class="danger-icon" />
+            <h4>Penalties for Non-Compliance</h4>
+          </div>
+          <div class="penalties-grid">
+            <div class="penalty-item">
+              <span class="penalty-amount">$10,000</span>
+              <span class="penalty-text">Per day in fines</span>
+            </div>
+            <div class="penalty-item">
+              <span class="penalty-amount">License</span>
+              <span class="penalty-text">Suspension or revocation</span>
+            </div>
+            <div class="penalty-item">
+              <span class="penalty-amount">Forced</span>
+              <span class="penalty-text">Facility evacuation</span>
+            </div>
+            <div class="penalty-item">
+              <span class="penalty-amount">Criminal</span>
+              <span class="penalty-text">Liability for deaths</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Standards Section -->
+    <div class="standards-section fade-up">
+      <h3 class="standards-title">Standards & Regulations We Follow</h3>
+      <div class="standards-grid">
+        <div class="standard-badge">
+          <div class="standard-content">AHCA</div>
+        </div>
+        <div class="standard-badge">
+          <div class="standard-content">NFPA 110</div>
+        </div>
+        <div class="standard-badge">
+          <div class="standard-content">Joint Commission</div>
+        </div>
+        <div class="standard-badge">
+          <div class="standard-content">CMS</div>
+        </div>
+        <div class="standard-badge">
+          <div class="standard-content">OSHA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .compliance {
+    background: linear-gradient(180deg, var(--clr-bg-warm) 0%, var(--clr-bg-white) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .compliance::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 50px,
+        rgba(242, 92, 42, 0.01) 50px,
+        rgba(242, 92, 42, 0.01) 100px
+      );
+    pointer-events: none;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .eyebrow {
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-safety-orange);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--ff-sans);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--clr-brand-teal);
+    margin-bottom: 1.5rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--clr-ink-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Compliance Card */
+  .compliance-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+    overflow: hidden;
+    border: 2px solid var(--clr-border);
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+  }
+
+  .compliance-header {
+    background: linear-gradient(135deg, var(--clr-brand-teal) 0%, var(--clr-brand-teal-light) 100%);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .compliance-header h3 {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: white;
+    flex: 1;
+  }
+
+  .alert-icon {
+    color: var(--clr-warning);
+    background: white;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+  }
+
+  .badge {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .badge--warning {
+    background: var(--clr-warning);
+    color: var(--clr-brand-teal);
+  }
+
+  .compliance-content {
+    padding: 3rem;
+  }
+
+  .requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .requirements-column {
+    position: relative;
+  }
+
+  .column-title {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--clr-border);
+  }
+
+  .column-title.success {
+    color: var(--clr-success);
+  }
+
+  .requirements-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .requirements-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(229, 224, 214, 0.5);
+  }
+
+  .requirements-list li:last-child {
+    border-bottom: none;
+  }
+
+  .list-icon {
+    color: var(--clr-warning);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .check-icon {
+    color: var(--clr-success);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  .requirements-list span {
+    color: var(--clr-ink-primary);
+    line-height: 1.5;
+  }
+
+  /* Penalties Warning */
+  .penalties-warning {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.05) 0%, rgba(231, 76, 60, 0.02) 100%);
+    border: 2px solid var(--clr-danger);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+
+  .penalties-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .penalties-header h4 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--clr-danger);
+    margin: 0;
+  }
+
+  .danger-icon {
+    color: var(--clr-danger);
+  }
+
+  .penalties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .penalty-item {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid rgba(231, 76, 60, 0.2);
+  }
+
+  .penalty-amount {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--clr-danger);
+    margin-bottom: 0.5rem;
+  }
+
+  .penalty-text {
+    font-size: 0.85rem;
+    color: var(--clr-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+
+  /* Standards Section */
+  .standards-section {
+    text-align: center;
+  }
+
+  .standards-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--clr-brand-teal);
+    margin-bottom: 2.5rem;
+  }
+
+  .standards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .standard-badge {
+    background: white;
+    border: 2px solid var(--clr-brand-teal);
+    border-radius: var(--radius);
+    padding: 1.5rem 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .standard-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(242, 92, 42, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .standard-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2);
+    border-color: var(--clr-safety-orange);
+  }
+
+  .standard-badge:hover::before {
+    left: 100%;
+  }
+
+  .standard-content {
+    font-weight: 900;
+    font-size: 1rem;
+    color: var(--clr-brand-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .requirements-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .compliance-content {
+      padding: 2rem 1.5rem;
+    }
+
+    .penalties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .standards-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .standard-badge {
+      width: 100%;
+      max-width: 250px;
+    }
+  }
+</style>

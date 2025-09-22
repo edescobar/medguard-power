@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGuard Power - Healthcare Generator Services</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=League+Spartan:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Miami Retro Brand Colors */
+        :root {
+            --clr-brand-teal: #0D4B4B;
+            --clr-safety-orange: #F25C2A;
+            --clr-coral: #FF7A45;
+            --clr-bg-warm: #F5EFE6;
+            --clr-bg-white: #FFFFFF;
+            --clr-ink-primary: #0F2D35;
+            --clr-ink-muted: #5C6B70;
+            --clr-success: #00A86B;
+            --clr-warning: #FFB84D;
+            --clr-border: #E5E0D6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "League Spartan", "Montserrat", system-ui, sans-serif;
+            color: var(--clr-ink-primary);
+            background: var(--clr-bg-warm);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--clr-bg-white);
+            box-shadow: 0 0 40px rgba(15,45,53,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--clr-safety-orange);
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .logo__text {
+            font-family: "Pacifico", cursive;
+            font-size: 42px;
+            color: var(--clr-brand-teal);
+        }
+
+        .starburst {
+            width: 36px;
+            height: 36px;
+            color: var(--clr-safety-orange);
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--clr-safety-orange);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg,
+                rgba(242,92,42,0.08) 0%,
+                rgba(13,75,75,0.05) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-family: "Pacifico", cursive;
+            font-size: 32px;
+            color: var(--clr-brand-teal);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--clr-ink-muted);
+            font-weight: 600;
+        }
+
+        /* Service Plans */
+        .services {
+            margin-bottom: 40px;
+        }
+
+        .services h2 {
+            color: var(--clr-brand-teal);
+            font-size: 28px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            border: 2px solid var(--clr-border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(15,45,53,0.15);
+        }
+
+        .service-card.featured {
+            border-color: var(--clr-safety-orange);
+            transform: scale(1.05);
+        }
+
+        .service-header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-header.essential {
+            background: var(--clr-brand-teal);
+            color: white;
+        }
+
+        .service-header.professional {
+            background: var(--clr-success);
+            color: white;
+        }
+
+        .service-header.enterprise {
+            background: var(--clr-safety-orange);
+            color: white;
+        }
+
+        .service-name {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .service-target {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .service-price {
+            font-size: 24px;
+            font-weight: 900;
+            margin-top: 10px;
+        }
+
+        .service-features {
+            padding: 20px;
+            background: white;
+        }
+
+        .service-features ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .service-features li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--clr-success);
+            font-weight: bold;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: var(--clr-bg-warm);
+            padding: 30px;
+            border-radius: 14px;
+            margin-bottom: 40px;
+        }
+
+        .why-choose h2 {
+            color: var(--clr-brand-teal);
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--clr-brand-teal);
+            margin-bottom: 5px;
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--clr-ink-muted);
+        }
+
+        /* Compliance Box */
+        .compliance {
+            background: linear-gradient(to right,
+                rgba(255,184,77,0.1),
+                rgba(255,184,77,0.05));
+            border: 2px solid var(--clr-warning);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .compliance h3 {
+            color: var(--clr-brand-teal);
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .compliance ul {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .compliance li {
+            padding: 6px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .compliance li:before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+            color: var(--clr-warning);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--clr-brand-teal);
+            color: white;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: "Pacifico", cursive;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .emergency {
+            background: var(--clr-safety-orange);
+            color: white;
+            padding: 15px;
+            border-radius: 999px;
+            margin-top: 20px;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+        }
+
+        /* Utility Badge */
+        .badge {
+            display: inline-block;
+            background: var(--clr-safety-orange);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .service-grid, .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card.featured {
+                transform: none;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <span class="logo__text">MedGuard</span>
+                <svg class="starburst" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm0 4l-.8 2.4L8.8 9.2l2.4.8L12 12.4l.8-2.4 2.4-.8-2.4-.8L12 6zm5 6l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3zm-10 0l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/>
+                </svg>
+            </div>
+            <div class="tagline">Power Services • Healthcare Only</div>
+        </div>
+
+        <!-- Hero -->
+        <div class="hero">
+            <h1>Never Fail an AHCA Inspection Again</h1>
+            <p>South Florida's Only 100% Healthcare-Focused Generator Service</p>
+        </div>
+
+        <!-- Service Plans -->
+        <div class="services">
+            <h2>Service Plans Designed for Healthcare</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-header essential">
+                        <div class="service-name">Essential</div>
+                        <div class="service-target">Small ALFs (30-60 beds)</div>
+                        <div class="service-price">$250-500/mo</div>
+                    </div>
+                    <div class="service-features">
+                        <ul>
+                            <li>Quarterly inspections</li>
+                            <li>Annual load testing</li>
+                            <li>Basic compliance docs</li>
+                            <li>Business hours support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="service-header professional">
+                        <div class="badge" style="background: white; color: var(--clr-success); margin-bottom: 10px;">Most Popular</div>
+                        <div class="service-name">Professional</div>
+                        <div class="service-target">Nursing Homes (60-150 beds)</div>
+                        <div class="service-price">$800-1,600/mo</div>
+                    </div>
+                    <div class="service-features">
+                        <ul>
+                            <li>Monthly maintenance</li>
+                            <li>Priority emergency response</li>
+                            <li>Digital compliance portal</li>
+                            <li>24/7 support hotline</li>
+                            <li>Fuel management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header enterprise">
+                        <div class="service-name">Enterprise</div>
+                        <div class="service-target">Hospitals & Multi-Site</div>
+                        <div class="service-price">$2,500+/mo</div>
+                    </div>
+                    <div class="service-features">
+                        <ul>
+                            <li>Weekly inspections</li>
+                            <li>Dedicated account mgr</li>
+                            <li>4-hour emergency SLA</li>
+                            <li>Custom reporting</li>
+                            <li>Multi-site coordination</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose -->
+        <div class="why-choose">
+            <h2>Why Healthcare Facilities Choose MedGuard</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🏥</div>
+                    <div class="feature-text">
+                        <h3>100% Healthcare Focus</h3>
+                        <p>We only service medical facilities - we know your compliance needs</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <div class="feature-text">
+                        <h3>Digital Portal</h3>
+                        <p>24/7 access to all maintenance records</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h3>4-Hour Response</h3>
+                        <p>Guaranteed emergency response time</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🗣️</div>
+                    <div class="feature-text">
+                        <h3>Bilingual Teams</h3>
+                        <p>English/Spanish certified technicians</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compliance -->
+        <div class="compliance">
+            <h3>Florida Law Requirements We Handle:</h3>
+            <ul>
+                <li>72-hour backup power at safe temperatures</li>
+                <li>Quarterly maintenance documentation</li>
+                <li>Annual load bank testing & certification</li>
+                <li>Fuel rotation and quality testing</li>
+                <li>Transfer switch testing</li>
+                <li>AHCA inspection-ready reporting</li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact">
+            <h2>Start Your Compliance Today</h2>
+            <div class="contact-info">
+                📧 <a href="mailto:service@medguardpower.com">service@medguardpower.com</a>
+            </div>
+            <div class="contact-info">
+                🌐 <a href="https://medguardpower.com">medguardpower.com</a>
+            </div>
+            <div class="emergency">
+                🚨 24/7 EMERGENCY: (305) XXX-XXXX
+            </div>
+        </div>
+    </div>
+</body>
+</html>

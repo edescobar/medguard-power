@@ -1,0 +1,521 @@
+---
+import Navigation from './Navigation.astro';
+---
+
+<Navigation />
+
+<section class="hero">
+  <div class="hero__background">
+    <div class="hero__pattern"></div>
+    <div class="hero__gradient"></div>
+  </div>
+
+  <div class="container hero__content">
+    <!-- Trust Indicator -->
+    <div class="trust-badge fade-down">
+      <span class="trust-badge__icon">🏆</span>
+      <span class="trust-badge__text">Serving 50+ Healthcare Facilities in South Florida</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="hero__main">
+      <p class="hero__eyebrow fade-up">
+        <span class="location-pin">📍</span>
+        Miami-Dade & Broward Counties • Healthcare Exclusive
+      </p>
+
+      <h1 class="hero__title fade-up display">
+        Never Fail an<br/>
+        <span class="text-gradient">AHCA Inspection</span><br/>
+        Again
+      </h1>
+
+      <p class="hero__subtitle fade-up">
+        Your generators keep patients safe. We keep your generators compliant.
+        <strong>4-hour emergency response. Digital documentation. Zero citations guaranteed.</strong>
+      </p>
+
+      <!-- Value Props Grid -->
+      <div class="value-props fade-up">
+        <div class="value-prop">
+          <div class="value-prop__icon">
+            <span>🏥</span>
+          </div>
+          <div class="value-prop__content">
+            <h3>Healthcare Only</h3>
+            <p>100% focused on medical facilities</p>
+          </div>
+        </div>
+
+        <div class="value-prop">
+          <div class="value-prop__icon">
+            <span>⚡</span>
+          </div>
+          <div class="value-prop__content">
+            <h3>4-Hour SLA</h3>
+            <p>Guaranteed emergency response</p>
+          </div>
+        </div>
+
+        <div class="value-prop">
+          <div class="value-prop__icon">
+            <span>📱</span>
+          </div>
+          <div class="value-prop__content">
+            <h3>Digital Portal</h3>
+            <p>24/7 compliance documentation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="hero__actions fade-up">
+        <a href="#contact" class="btn btn--primary btn--large">
+          <span class="btn__icon">📋</span>
+          Get Free Compliance Audit
+          <span class="btn__arrow">→</span>
+        </a>
+        <a href="tel:305-XXX-XXXX" class="btn btn--secondary btn--large">
+          <span class="btn__icon">📞</span>
+          (305) XXX-XXXX
+        </a>
+      </div>
+
+      <!-- Urgency Banner -->
+      <div class="urgency-banner fade-up">
+        <div class="urgency-banner__content">
+          <span class="urgency-banner__icon">🌀</span>
+          <span class="urgency-banner__text">
+            <strong>Hurricane Season Alert:</strong> Schedule your pre-season inspection now
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Proof -->
+    <div class="social-proof fade-up">
+      <div class="social-proof__item">
+        <div class="social-proof__number">100%</div>
+        <div class="social-proof__label">Pass Rate</div>
+      </div>
+      <div class="social-proof__divider"></div>
+      <div class="social-proof__item">
+        <div class="social-proof__number">50+</div>
+        <div class="social-proof__label">Facilities</div>
+      </div>
+      <div class="social-proof__divider"></div>
+      <div class="social-proof__item">
+        <div class="social-proof__number">24/7</div>
+        <div class="social-proof__label">Support</div>
+      </div>
+      <div class="social-proof__divider"></div>
+      <div class="social-proof__item">
+        <div class="social-proof__number">4hr</div>
+        <div class="social-proof__label">Response</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-indicator__mouse">
+      <div class="scroll-indicator__wheel"></div>
+    </div>
+    <p class="scroll-indicator__text">Scroll to explore</p>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    overflow: hidden;
+  }
+
+  /* Background Effects */
+  .hero__background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .hero__gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(242, 92, 42, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(13, 75, 75, 0.06) 0%, transparent 50%),
+                linear-gradient(180deg, var(--clr-bg-warm) 0%, rgba(255, 249, 245, 0.5) 100%);
+  }
+
+  .hero__pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(242, 92, 42, 0.02) 40px,
+        rgba(242, 92, 42, 0.02) 80px
+      );
+    animation: pattern-drift 60s linear infinite;
+  }
+
+  @keyframes pattern-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(80px); }
+  }
+
+  /* Trust Badge */
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 20px rgba(15, 45, 53, 0.1);
+    margin-bottom: 2rem;
+    border: 1px solid var(--clr-border);
+  }
+
+  .trust-badge__icon {
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+  }
+
+  .trust-badge__text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--clr-brand-teal);
+  }
+
+  /* Main Content */
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clr-safety-orange);
+    margin-bottom: 1.5rem;
+  }
+
+  .location-pin {
+    animation: bounce 3s infinite;
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+    color: var(--clr-brand-teal);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero__subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--clr-ink-muted);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero__subtitle strong {
+    color: var(--clr-brand-teal);
+    font-weight: 700;
+  }
+
+  /* Value Props */
+  .value-props {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 2.5rem auto;
+  }
+
+  .value-prop {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1.2rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(15, 45, 53, 0.08);
+    border: 1px solid var(--clr-border);
+    transition: all 0.3s ease;
+  }
+
+  .value-prop:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(15, 45, 53, 0.15);
+    border-color: var(--clr-safety-orange);
+  }
+
+  .value-prop__icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(242, 92, 42, 0.1) 0%, rgba(255, 122, 69, 0.1) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .value-prop__content {
+    text-align: left;
+  }
+
+  .value-prop__content h3 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 0.25rem;
+  }
+
+  .value-prop__content p {
+    font-size: 0.85rem;
+    color: var(--clr-ink-muted);
+    line-height: 1.4;
+  }
+
+  /* CTA Buttons */
+  .hero__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2.5rem 0;
+  }
+
+  .btn--large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn__icon {
+    font-size: 1.2rem;
+  }
+
+  .btn__arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .btn:hover .btn__arrow {
+    transform: translateX(4px);
+  }
+
+  /* Urgency Banner */
+  .urgency-banner {
+    background: linear-gradient(135deg, rgba(255, 184, 77, 0.15) 0%, rgba(255, 184, 77, 0.05) 100%);
+    border: 2px solid var(--clr-warning);
+    border-radius: 14px;
+    padding: 1rem 1.5rem;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+
+  .urgency-banner__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .urgency-banner__icon {
+    font-size: 1.5rem;
+    animation: spin 10s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .urgency-banner__text {
+    font-size: 0.95rem;
+    color: var(--clr-brand-teal);
+  }
+
+  /* Social Proof */
+  .social-proof {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 999px;
+    box-shadow: 0 4px 30px rgba(15, 45, 53, 0.1);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social-proof__item {
+    text-align: center;
+  }
+
+  .social-proof__number {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--clr-safety-orange);
+  }
+
+  .social-proof__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--clr-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .social-proof__divider {
+    width: 1px;
+    height: 30px;
+    background: var(--clr-border);
+  }
+
+  /* Scroll Indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .scroll-indicator__mouse {
+    width: 24px;
+    height: 36px;
+    border: 2px solid var(--clr-brand-teal);
+    border-radius: 12px;
+    position: relative;
+    opacity: 0.7;
+  }
+
+  .scroll-indicator__wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--clr-safety-orange);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 2s infinite;
+  }
+
+  @keyframes scroll-wheel {
+    0% { top: 8px; opacity: 1; }
+    100% { top: 20px; opacity: 0; }
+  }
+
+  .scroll-indicator__text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--clr-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .fade-down {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+  .fade-up:nth-child(4) { animation-delay: 0.3s; }
+  .fade-up:nth-child(5) { animation-delay: 0.4s; }
+  .fade-up:nth-child(6) { animation-delay: 0.5s; }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: 100px 0 60px;
+    }
+
+    .value-props {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn--large {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .social-proof {
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .social-proof__number {
+      font-size: 1.2rem;
+    }
+
+    .scroll-indicator {
+      display: none;
+    }
+  }
+</style>

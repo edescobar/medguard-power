@@ -1,0 +1,568 @@
+---
+import Icon from './Icons.astro';
+---
+
+<section id="services" class="services section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-label">Our Services</span>
+      <h2 class="section-title">Plans Designed for Healthcare Facilities</h2>
+      <p class="section-subtitle">
+        From small ALFs to major hospital systems, we provide comprehensive generator maintenance
+        with guaranteed AHCA compliance. Contact us for customized pricing.
+      </p>
+    </div>
+
+    <!-- Service Cards -->
+    <div class="services-grid">
+      <!-- Essential Plan -->
+      <div class="service-card" data-plan="essential">
+        <div class="service-card__header">
+          <div class="service-card__icon">
+            <Icon name="hospital" size={32} />
+          </div>
+          <h3 class="service-card__name">Essential</h3>
+          <p class="service-card__target">Small ALFs (30-60 beds)</p>
+        </div>
+
+        <div class="service-card__features">
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Quarterly preventive maintenance</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Annual load bank testing</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Basic compliance documentation</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Business hours support (8am-6pm)</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>48-hour response time</span>
+          </div>
+        </div>
+
+        <div class="service-card__footer">
+          <a href="#contact" class="btn btn--outline btn--block">
+            Get Custom Quote
+          </a>
+          <p class="service-card__note">Perfect for smaller facilities</p>
+        </div>
+      </div>
+
+      <!-- Professional Plan (Featured) -->
+      <div class="service-card service-card--featured" data-plan="professional">
+        <div class="service-card__badge">
+          <span>Most Popular</span>
+        </div>
+
+        <div class="service-card__header">
+          <div class="service-card__icon">
+            <Icon name="lightning" size={32} />
+          </div>
+          <h3 class="service-card__name">Professional</h3>
+          <p class="service-card__target">Nursing Homes (60-150 beds)</p>
+        </div>
+
+        <div class="service-card__features">
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Monthly maintenance visits</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Bi-annual load testing</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Digital compliance portal access</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>24/7 emergency hotline</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>12-hour priority response</span>
+          </div>
+          <div class="feature-item highlight">
+            <Icon name="star" size={16} class="feature-icon" />
+            <span>Fuel management included</span>
+          </div>
+          <div class="feature-item highlight">
+            <Icon name="star" size={16} class="feature-icon" />
+            <span>Hurricane readiness package</span>
+          </div>
+        </div>
+
+        <div class="service-card__footer">
+          <a href="#contact" class="btn btn--primary btn--block">
+            Get Started Today
+          </a>
+          <p class="service-card__note">Best value for compliance</p>
+        </div>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="service-card" data-plan="enterprise">
+        <div class="service-card__header">
+          <div class="service-card__icon">
+            <Icon name="shield" size={32} />
+          </div>
+          <h3 class="service-card__name">Enterprise</h3>
+          <p class="service-card__target">Hospitals & Multi-Site</p>
+        </div>
+
+        <div class="service-card__features">
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Weekly inspections & testing</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Dedicated account manager</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Custom compliance dashboard</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>4-hour emergency SLA</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Multi-site coordination</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Predictive maintenance AI</span>
+          </div>
+          <div class="feature-item">
+            <Icon name="check" size={16} class="feature-icon" />
+            <span>Executive reporting</span>
+          </div>
+        </div>
+
+        <div class="service-card__footer">
+          <a href="#contact" class="btn btn--outline btn--block">
+            Contact Sales
+          </a>
+          <p class="service-card__note">Tailored for complex needs</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Services -->
+    <div class="additional-services">
+      <h3 class="additional-services__title">Additional Services Available</h3>
+      <div class="add-ons-grid">
+        <div class="add-on">
+          <div class="add-on__icon">
+            <Icon name="hurricane" size={40} />
+          </div>
+          <h4>Hurricane Prep</h4>
+          <p>Pre-season inspection & fuel management</p>
+        </div>
+        <div class="add-on">
+          <div class="add-on__icon">
+            <Icon name="fuel" size={40} />
+          </div>
+          <h4>Fuel Polishing</h4>
+          <p>Keep diesel fresh & compliant</p>
+        </div>
+        <div class="add-on">
+          <div class="add-on__icon">
+            <Icon name="chart" size={40} />
+          </div>
+          <h4>Load Bank Testing</h4>
+          <p>Full NFPA 110 compliance testing</p>
+        </div>
+        <div class="add-on">
+          <div class="add-on__icon">
+            <Icon name="monitor" size={40} />
+          </div>
+          <h4>24/7 Monitoring</h4>
+          <p>Remote generator health tracking</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Banner -->
+    <div class="trust-banner">
+      <div class="trust-banner__content">
+        <div class="trust-item">
+          <Icon name="shield" size={24} class="trust-icon" />
+          <span class="trust-text">Licensed & Insured</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <Icon name="certificate" size={24} class="trust-icon" />
+          <span class="trust-text">AHCA Certified</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <Icon name="star" size={24} class="trust-icon" />
+          <span class="trust-text">100% Pass Rate</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+          <Icon name="users" size={24} class="trust-icon" />
+          <span class="trust-text">50+ Facilities Served</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="pricing-cta">
+      <h3>Ready to Ensure Your Compliance?</h3>
+      <p>Contact us today for a customized maintenance plan and pricing that fits your facility's needs.</p>
+      <a href="#contact" class="btn btn--primary btn--large">
+        Request Your Custom Quote
+        <Icon name="arrow-right" size={20} />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--clr-bg-section);
+    position: relative;
+    padding: 4rem 0;
+  }
+
+  /* Section Header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-safety-orange);
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(242, 92, 42, 0.1);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--clr-brand-teal);
+    margin-bottom: 1rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--clr-ink-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Service Cards */
+  .service-card {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(15, 45, 53, 0.08);
+    border: 2px solid var(--clr-border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(15, 45, 53, 0.12);
+  }
+
+  .service-card--featured {
+    border-color: var(--clr-safety-orange);
+    background: linear-gradient(135deg, white 0%, rgba(242, 92, 42, 0.02) 100%);
+  }
+
+  .service-card__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--clr-safety-orange);
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .service-card__header {
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--clr-border);
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, rgba(13, 75, 75, 0.1) 0%, rgba(13, 75, 75, 0.05) 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--clr-brand-teal);
+  }
+
+  .service-card--featured .service-card__icon {
+    background: linear-gradient(135deg, rgba(242, 92, 42, 0.1) 0%, rgba(255, 122, 69, 0.1) 100%);
+    color: var(--clr-safety-orange);
+  }
+
+  .service-card__name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .service-card__target {
+    font-size: 0.9rem;
+    color: var(--clr-ink-muted);
+  }
+
+  /* Features */
+  .service-card__features {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(229, 224, 214, 0.3);
+  }
+
+  .feature-item:last-child {
+    border-bottom: none;
+  }
+
+  .feature-item.highlight {
+    color: var(--clr-safety-orange);
+    font-weight: 600;
+  }
+
+  .feature-icon {
+    color: var(--clr-success);
+    flex-shrink: 0;
+  }
+
+  .feature-item.highlight .feature-icon {
+    color: var(--clr-safety-orange);
+  }
+
+  /* Footer */
+  .service-card__footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--clr-border);
+  }
+
+  .btn--block {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn--outline {
+    background: transparent;
+    border: 2px solid var(--clr-brand-teal);
+    color: var(--clr-brand-teal);
+  }
+
+  .btn--outline:hover {
+    background: var(--clr-brand-teal);
+    color: white;
+  }
+
+  .service-card__note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--clr-ink-muted);
+    margin-top: 0.75rem;
+    font-style: italic;
+  }
+
+  /* Additional Services */
+  .additional-services {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(15, 45, 53, 0.08);
+    margin-bottom: 3rem;
+  }
+
+  .additional-services__title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 2rem;
+  }
+
+  .add-ons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .add-on {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 14px;
+    background: var(--clr-bg-section);
+    transition: all 0.3s ease;
+  }
+
+  .add-on:hover {
+    background: white;
+    box-shadow: 0 4px 15px rgba(15, 45, 53, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .add-on__icon {
+    color: var(--clr-safety-orange);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .add-on h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .add-on p {
+    font-size: 0.85rem;
+    color: var(--clr-ink-muted);
+  }
+
+  /* Trust Banner */
+  .trust-banner {
+    background: linear-gradient(135deg, var(--clr-brand-teal) 0%, var(--clr-brand-teal-light) 100%);
+    border-radius: 999px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(13, 75, 75, 0.15);
+    margin-bottom: 3rem;
+  }
+
+  .trust-banner__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+  }
+
+  .trust-icon {
+    color: white;
+  }
+
+  .trust-text {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  .trust-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Pricing CTA */
+  .pricing-cta {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(15, 45, 53, 0.08);
+  }
+
+  .pricing-cta h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 1rem;
+  }
+
+  .pricing-cta p {
+    font-size: 1.1rem;
+    color: var(--clr-ink-muted);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn--large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-divider {
+      display: none;
+    }
+
+    .trust-banner__content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .additional-services {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

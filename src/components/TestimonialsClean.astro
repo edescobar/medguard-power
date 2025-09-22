@@ -1,0 +1,384 @@
+---
+import Icon from './Icons.astro';
+---
+
+<section class="testimonials section">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow fade-up">TRUSTED BY LEADERS</p>
+      <h2 class="section-title fade-up">
+        What Healthcare <span class="text-gradient">Leaders Say</span>
+      </h2>
+      <p class="section-subtitle fade-up">
+        Join dozens of facilities that trust MedGuard for their generator compliance
+      </p>
+    </div>
+
+    <div class="testimonials-grid fade-up">
+      <div class="testimonial-card">
+        <div class="rating">
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+        </div>
+        <p class="testimonial-text">
+          "MedGuard saved us during our AHCA inspection. Their digital portal had every document the inspector needed, organized and ready. We passed with zero citations for the first time in years."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SM</div>
+          <div class="author-info">
+            <h4 class="author-name">Sarah Martinez</h4>
+            <p class="author-role">Administrator, Sunset Gardens ALF</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card featured">
+        <div class="featured-badge">TOP RATED</div>
+        <div class="rating">
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+        </div>
+        <p class="testimonial-text">
+          "When Hurricane Ian hit, MedGuard was here within 2 hours to ensure our generators kept running. They understand that for us, power isn't just convenience - it's life or death."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JC</div>
+          <div class="author-info">
+            <h4 class="author-name">Dr. James Chen</h4>
+            <p class="author-role">Medical Director, Broward Care Center</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="rating">
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+          <Icon name="star" size={20} />
+        </div>
+        <p class="testimonial-text">
+          "The bilingual team is a game-changer. My maintenance staff can actually communicate with the technicians. Plus, their compliance guarantee gives me peace of mind."
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RD</div>
+          <div class="author-info">
+            <h4 class="author-name">Roberto Diaz</h4>
+            <p class="author-role">Facilities Manager, Miami Medical Plaza</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Metrics -->
+    <div class="trust-metrics fade-up">
+      <div class="metric-item">
+        <div class="metric-number" data-count="50">50+</div>
+        <div class="metric-label">Healthcare Facilities</div>
+        <div class="metric-sublabel">Served in South Florida</div>
+      </div>
+
+      <div class="metric-divider"></div>
+
+      <div class="metric-item">
+        <div class="metric-number" data-count="100">100%</div>
+        <div class="metric-label">AHCA Pass Rate</div>
+        <div class="metric-sublabel">Zero citation guarantee</div>
+      </div>
+
+      <div class="metric-divider"></div>
+
+      <div class="metric-item">
+        <div class="metric-number">4hr</div>
+        <div class="metric-label">Emergency Response</div>
+        <div class="metric-sublabel">Guaranteed SLA</div>
+      </div>
+
+      <div class="metric-divider"></div>
+
+      <div class="metric-item">
+        <div class="metric-number">24/7</div>
+        <div class="metric-label">Support Available</div>
+        <div class="metric-sublabel">Always here for you</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background: var(--clr-bg-section);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials::before {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, var(--clr-brand-teal) 0%, transparent 70%);
+    opacity: 0.02;
+    pointer-events: none;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .eyebrow {
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-safety-orange);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: var(--ff-sans);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--clr-brand-teal);
+    margin-bottom: 1.5rem;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--clr-safety-orange) 0%, var(--clr-coral) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--clr-ink-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Testimonials Grid */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    border: 2px solid var(--clr-border);
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2);
+  }
+
+  .testimonial-card.featured {
+    border-color: var(--clr-safety-orange);
+    background: linear-gradient(135deg, white 0%, rgba(242, 92, 42, 0.02) 100%);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--clr-safety-orange);
+    color: white;
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--clr-warning);
+  }
+
+  .testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--clr-ink-primary);
+    margin-bottom: 2rem;
+    font-style: italic;
+    position: relative;
+  }
+
+  .testimonial-text::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    font-family: var(--ff-display);
+    font-size: 4rem;
+    color: var(--clr-safety-orange);
+    opacity: 0.15;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--clr-border);
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--clr-brand-teal) 0%, var(--clr-brand-teal-light) 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--clr-brand-teal);
+    margin-bottom: 0.25rem;
+  }
+
+  .author-role {
+    font-size: 0.85rem;
+    color: var(--clr-ink-muted);
+    font-weight: 600;
+  }
+
+  /* Trust Metrics */
+  .trust-metrics {
+    background: linear-gradient(135deg, var(--clr-brand-teal) 0%, var(--clr-brand-teal-light) 100%);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-shadow: var(--shadow-3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .trust-metrics::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(255, 255, 255, 0.03) 30px,
+        rgba(255, 255, 255, 0.03) 60px
+      );
+    pointer-events: none;
+  }
+
+  .metric-item {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .metric-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--clr-safety-orange);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .metric-label {
+    font-size: 1rem;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+
+  .metric-sublabel {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+  }
+
+  .metric-divider {
+    width: 2px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Animations */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+  .fade-up:nth-child(4) { animation-delay: 0.3s; }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .trust-metrics {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+    }
+
+    .metric-divider {
+      width: 100px;
+      height: 2px;
+    }
+
+    .metric-number {
+      font-size: 2.5rem;
+    }
+  }
+</style>

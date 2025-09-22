@@ -1,16 +1,20 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import HeroClean from '../components/HeroClean.astro';
+import ServicesClean from '../components/ServicesClean.astro';
+import WhyChooseUsClean from '../components/WhyChooseUsClean.astro';
+import ComplianceClean from '../components/ComplianceClean.astro';
+import TestimonialsClean from '../components/TestimonialsClean.astro';
+import CTAClean from '../components/CTAClean.astro';
+import FooterClean from '../components/FooterClean.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="MedGuard Power - Healthcare Generator Maintenance & Compliance">
+  <HeroClean />
+  <ServicesClean />
+  <WhyChooseUsClean />
+  <ComplianceClean />
+  <TestimonialsClean />
+  <CTAClean />
+  <FooterClean />
+</Layout>
